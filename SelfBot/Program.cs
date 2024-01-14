@@ -52,7 +52,6 @@ class Program
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("Bot connected!");
 
-        // Allow the user to input Guild ID and Channel ID once
         await SetGuildAndChannel();
         await InputLoop();
     }
