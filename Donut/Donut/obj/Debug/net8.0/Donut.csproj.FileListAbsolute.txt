@@ -1,0 +1,14 @@
+C:\Users\brady\source\repos\Donut\Donut\bin\Debug\net8.0\Donut.exe
+C:\Users\brady\source\repos\Donut\Donut\bin\Debug\net8.0\Donut.deps.json
+C:\Users\brady\source\repos\Donut\Donut\bin\Debug\net8.0\Donut.runtimeconfig.json
+C:\Users\brady\source\repos\Donut\Donut\bin\Debug\net8.0\Donut.dll
+C:\Users\brady\source\repos\Donut\Donut\bin\Debug\net8.0\Donut.pdb
+C:\Users\brady\source\repos\Donut\Donut\obj\Debug\net8.0\Donut.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\brady\source\repos\Donut\Donut\obj\Debug\net8.0\Donut.AssemblyInfoInputs.cache
+C:\Users\brady\source\repos\Donut\Donut\obj\Debug\net8.0\Donut.AssemblyInfo.cs
+C:\Users\brady\source\repos\Donut\Donut\obj\Debug\net8.0\Donut.csproj.CoreCompileInputs.cache
+C:\Users\brady\source\repos\Donut\Donut\obj\Debug\net8.0\Donut.dll
+C:\Users\brady\source\repos\Donut\Donut\obj\Debug\net8.0\refint\Donut.dll
+C:\Users\brady\source\repos\Donut\Donut\obj\Debug\net8.0\Donut.pdb
+C:\Users\brady\source\repos\Donut\Donut\obj\Debug\net8.0\Donut.genruntimeconfig.cache
+C:\Users\brady\source\repos\Donut\Donut\obj\Debug\net8.0\ref\Donut.dll
