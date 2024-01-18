@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Embed Sender</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #3498db;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3498db;
+            margin-bottom: 30px;
+        }
+
+        #formContainer {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            background-color: #121212;
+            color: #3498db;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Stars in the background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: url('https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js') #121212;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="formContainer">
+        <h1>Discord Embed Sender</h1>
+
+        <label for="webhookUrl">Webhook URL or Bot Token:</label>
+        <input type="text" id="webhookUrl" placeholder="Enter webhook URL or bot token">
+
+        <label for="embedTitle">Embed Title:</label>
+        <input type="text" id="embedTitle" placeholder="Enter embed title">
+
+        <label for="embedContent">Embed Content:</label>
+        <textarea id="embedContent" placeholder="Enter embed content"></textarea>
+
+        <label for="embedSideImage">Side Image URL:</label>
+        <input type="text" id="embedSideImage" placeholder="Enter side image URL">
+
+        <label for="embedColor">Embed Color (Hex):</label>
+        <input type="text" id="embedColor" placeholder="Enter embed color (Hex)">
+
+        <button onclick="sendEmbed()">Send Embed</button>
+    </div>
+
+    <script>
+        function sendEmbed() {
+            const webhookUrl = document.getElementById('webhookUrl').value;
+            const embedHeader = document.getElementById('embedHeaderContent').value;
+            const embedTitle = document.getElementById('embedTitle').value;
+            const embedContent = document.getElementById('embedContent').value;
+            const embedSideImage = document.getElementById('embedSideImage').value;
+            const embedColor = document.getElementById('embedColor').value;
+            const embedFooter = document.getElementById('embedFooterContent').value;
+
+            const embed = {
+                content: embedContent,
+                embeds: [{
+                    title: embedTitle,
+                    description: embedContent,
+                    url: embedSideImage,
+                    color: parseInt(embedColor.replace(/^#/, ''), 16) || 0,
+                    footer: { text: embedFooter },
+                    author: { name: embedHeader },
+                    image: { url: embedSideImage },
+                    thumbnail: { url: embedSideImage }
+                }]
+            };
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(embed),
+            })
+            .then(response => response.json())
+            .then(data => console.log('Embed sent:', data))
+            .catch(error => console.error('Error sending embed:', error));
+        }
+    </script>
+</body>
+</html>
